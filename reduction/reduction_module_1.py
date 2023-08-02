@@ -1,1 +1,1 @@
-print("'Reduction_Module_1' script is executed")
+print("'reduction_module_1.py' script is executed")
