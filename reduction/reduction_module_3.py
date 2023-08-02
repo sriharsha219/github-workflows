@@ -1,1 +1,1 @@
-print("This is 'Reduction_Module_2' script")
+print("'Reduction_Module_3' script is executed")
