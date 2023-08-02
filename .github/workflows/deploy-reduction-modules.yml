@@ -25,7 +25,7 @@ jobs:
   # This workflow contains multiple jobs
   # reduction_module_1 deployment job
   deploy_reduction_module_1:
-    name: Reduction module_1 deployment
+    name: reduction_module_1 deployment
     if: github.event.inputs.job == 'deploy_reduction_module_1'
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -33,13 +33,15 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runner's shell
-    - name: Deploy Reduction module_1 in AWS EC2
+    - name: Clone github-worflows repository to AWS EC2
       run: |
-        whoami
-        pwd
+        git clone https://github.com/sriharsha219/github-workflows
+        cd ./github-workflows/reduction
+    - name: Run reduction_module_1.py script in AWS EC2
+      run: python3 reduction_module_1.py
   # reduction_module_2 deployment job
   deploy_reduction_module_2:
-    name: Reduction module_2 deployment
+    name: reduction_module_2 deployment
     if: github.event.inputs.job == 'deploy_reduction_module_2'
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -47,13 +49,15 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runner's shell
-    - name: Deploy Reduction module_2 in AWS EC2
+    - name: Clone github-worflows repository to AWS EC2
       run: |
-        whoami
-        pwd
+        git clone https://github.com/sriharsha219/github-workflows
+        cd ./github-workflows/reduction
+    - name: Run reduction_module_2.py script in AWS EC2
+      run: python3 reduction_module_2.py
   # reduction_module_3 deployment job
   deploy_reduction_module_3:
-    name: Reduction module_3 deployment
+    name: reduction_module_3 deployment
     if: github.event.inputs.job == 'deploy_reduction_module_3'
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -61,7 +65,9 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runner's shell
-    - name: Deploy Reduction module_3 in AWS EC2
+    - name: Clone github-worflows repository to AWS EC2
       run: |
-        whoami
-        pwd
+        git clone https://github.com/sriharsha219/github-workflows
+        cd ./github-workflows/reduction
+    - name: Run reduction_module_3.py script in AWS EC2
+      run: python3 reduction_module_3.py
