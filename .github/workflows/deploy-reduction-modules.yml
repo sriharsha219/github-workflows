@@ -36,9 +36,10 @@ jobs:
     - name: Clone github-worflows repository to AWS EC2
       run: |
         git clone https://github.com/sriharsha219/github-workflows
-        cd ./github-workflows/reduction
     - name: Run reduction_module_1.py script in AWS EC2
-      run: python3 reduction_module_1.py
+      run: |
+        cd ./github-workflows/reduction
+        python3 reduction_module_1.py
   # reduction_module_2 deployment job
   deploy_reduction_module_2:
     name: reduction_module_2 deployment
@@ -54,7 +55,9 @@ jobs:
         git clone https://github.com/sriharsha219/github-workflows
         cd ./github-workflows/reduction
     - name: Run reduction_module_2.py script in AWS EC2
-      run: python3 reduction_module_2.py
+      run: |
+        cd ./github-workflows/reduction
+        python3 reduction_module_2.py
   # reduction_module_3 deployment job
   deploy_reduction_module_3:
     name: reduction_module_3 deployment
@@ -70,4 +73,6 @@ jobs:
         git clone https://github.com/sriharsha219/github-workflows
         cd ./github-workflows/reduction
     - name: Run reduction_module_3.py script in AWS EC2
-      run: python3 reduction_module_3.py
+      run: |
+        cd ./github-workflows/reduction
+        python3 reduction_module_3.py
