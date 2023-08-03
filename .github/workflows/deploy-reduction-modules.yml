@@ -35,7 +35,7 @@ jobs:
       # Runs a single command using the runner's shell
       - name: Clone github-worflows repository to AWS EC2
         run: |
-          if [ ! -d "./github-workflows" ]; then
+          if [ -d "./github-workflows" ]; then
             cd ./github-workflows
             git pull origin 
           else
@@ -57,7 +57,7 @@ jobs:
       # Runs a single command using the runner's shell
       - name: Clone github-worflows repository to AWS EC2
         run: |
-          if [ ! -d "./github-workflows" ]; then
+          if [ -d "./github-workflows" ]; then
             cd ./github-workflows
             git pull origin 
           else
@@ -79,7 +79,7 @@ jobs:
       # Runs a single command using the runner's shell
       - name: Clone github-worflows repository to AWS EC2
         run: |
-          if [ ! -d "./github-workflows" ]; then
+          if [ -d "./github-workflows" ]; then
             cd ./github-workflows
             git pull origin 
           else
