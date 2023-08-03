@@ -10,15 +10,15 @@ on:
     inputs:
       job:
         # Description to be shown in the UI
-        description: 'Job Id'
+        description: "Job Id"
         # Input has to be provided for the workflow to run
         required: true
         type: choice
         options:
-        - Select Job Id
-        - deploy_reduction_module_1
-        - deploy_reduction_module_2    
-        - deploy_reduction_module_3
+          - Select Job Id
+          - deploy_reduction_module_1
+          - deploy_reduction_module_2
+          - deploy_reduction_module_3
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -32,21 +32,19 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Runs a single command using the runner's shell
-    - name: Clone github-worflows repository to AWS EC2
-      run: |
-        if [ ! -d "./github-workflows" ]; then
-    # Take action if $DIR exists
-          cd ./github-workflows/.
-          git pull origin 
-        else
-    #  Control will jump here if $DIR does NOT exists
-          git clone https://github.com/sriharsha219/github-workflows .
-        fi
-    - name: Run reduction_module_1.py script in AWS EC2
-      run: |
-        cd ./github-workflows/reduction
-        python3 reduction_module_1.py
+      # Runs a single command using the runner's shell
+      - name: Clone github-worflows repository to AWS EC2
+        run: |
+          if [ ! -d "./github-workflows" ]; then
+            cd ./github-workflows
+            git pull origin 
+          else
+            git clone https://github.com/sriharsha219/github-workflows .
+          fi
+      - name: Run reduction_module_1.py script in AWS EC2
+        run: |
+          cd ./github-workflows/reduction
+          python3 reduction_module_1.py
   # reduction_module_2 deployment job
   deploy_reduction_module_2:
     name: reduction_module_2 deployment
@@ -56,21 +54,19 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Runs a single command using the runner's shell
-    - name: Clone github-worflows repository to AWS EC2
-      run: |
-        if [ ! -d "./github-workflows" ]; then
-    # Take action if $DIR exists
-          cd ./github-workflows/.
-          git pull origin 
-        else
-    #  Control will jump here if $DIR does NOT exists
-          git clone https://github.com/sriharsha219/github-workflows .
-        fi
-    - name: Run reduction_module_2.py script in AWS EC2
-      run: |
-        cd ./github-workflows/reduction
-        python3 reduction_module_2.py
+      # Runs a single command using the runner's shell
+      - name: Clone github-worflows repository to AWS EC2
+        run: |
+          if [ ! -d "./github-workflows" ]; then
+            cd ./github-workflows
+            git pull origin 
+          else
+            git clone https://github.com/sriharsha219/github-workflows .
+          fi
+      - name: Run reduction_module_2.py script in AWS EC2
+        run: |
+          cd ./github-workflows/reduction
+          python3 reduction_module_2.py
   # reduction_module_3 deployment job
   deploy_reduction_module_3:
     name: reduction_module_3 deployment
@@ -80,18 +76,16 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Runs a single command using the runner's shell
-    - name: Clone github-worflows repository to AWS EC2
-      run: |
-        if [ ! -d "./github-workflows" ]; then
-    # Take action if $DIR exists
-          cd ./github-workflows/.
-          git pull origin 
-        else
-    #  Control will jump here if $DIR does NOT exists
-          git clone https://github.com/sriharsha219/github-workflows .
-        fi
-    - name: Run reduction_module_3.py script in AWS EC2
-      run: |
-        cd ./github-workflows/reduction
-        python3 reduction_module_3.py
+      # Runs a single command using the runner's shell
+      - name: Clone github-worflows repository to AWS EC2
+        run: |
+          if [ ! -d "./github-workflows" ]; then
+            cd ./github-workflows
+            git pull origin 
+          else
+            git clone https://github.com/sriharsha219/github-workflows .
+          fi
+      - name: Run reduction_module_3.py script in AWS EC2
+        run: |
+          cd ./github-workflows/reduction
+          python3 reduction_module_3.py
