@@ -35,7 +35,14 @@ jobs:
     # Runs a single command using the runner's shell
     - name: Clone github-worflows repository to AWS EC2
       run: |
-        git clone https://github.com/sriharsha219/github-workflows
+        if [ ! -d "./github-workflows" ]; then
+      ### Take action if $DIR exists ###
+          cd ./github-workflows/.
+          git pull origin 
+        else
+      ###  Control will jump here if $DIR does NOT exists ###
+          git clone https://github.com/sriharsha219/github-workflows .
+        fi
     - name: Run reduction_module_1.py script in AWS EC2
       run: |
         cd ./github-workflows/reduction
@@ -52,8 +59,14 @@ jobs:
     # Runs a single command using the runner's shell
     - name: Clone github-worflows repository to AWS EC2
       run: |
-        git clone https://github.com/sriharsha219/github-workflows
-        cd ./github-workflows/reduction
+        if [ ! -d "./github-workflows" ]; then
+      ### Take action if $DIR exists ###
+          cd ./github-workflows/.
+          git pull origin 
+        else
+      ###  Control will jump here if $DIR does NOT exists ###
+          git clone https://github.com/sriharsha219/github-workflows .
+        fi
     - name: Run reduction_module_2.py script in AWS EC2
       run: |
         cd ./github-workflows/reduction
@@ -70,8 +83,14 @@ jobs:
     # Runs a single command using the runner's shell
     - name: Clone github-worflows repository to AWS EC2
       run: |
-        git clone https://github.com/sriharsha219/github-workflows
-        cd ./github-workflows/reduction
+        if [ ! -d "./github-workflows" ]; then
+      ### Take action if $DIR exists ###
+          cd ./github-workflows/.
+          git pull origin 
+        else
+      ###  Control will jump here if $DIR does NOT exists ###
+          git clone https://github.com/sriharsha219/github-workflows .
+        fi
     - name: Run reduction_module_3.py script in AWS EC2
       run: |
         cd ./github-workflows/reduction
