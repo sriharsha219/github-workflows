@@ -37,6 +37,7 @@ jobs:
         run: |
           if [ -d "./github-workflows" ]; then
             cd ./github-workflows
+            pwd
             git pull
           else
             git clone https://github.com/sriharsha219/github-workflows
@@ -44,6 +45,7 @@ jobs:
       - name: Run reduction_module_1.py script in AWS EC2
         run: |
           cd ./github-workflows/reduction
+          pwd
           python3 reduction_module_1.py
   # reduction_module_2 deployment job
   deploy_reduction_module_2:
@@ -59,6 +61,7 @@ jobs:
         run: |
           if [ -d "./github-workflows" ]; then
             cd ./github-workflows
+            pwd
             git pull
           else
             git clone https://github.com/sriharsha219/github-workflows
@@ -66,6 +69,7 @@ jobs:
       - name: Run reduction_module_2.py script in AWS EC2
         run: |
           cd ./github-workflows/reduction
+          pwd
           python3 reduction_module_2.py
   # reduction_module_3 deployment job
   deploy_reduction_module_3:
@@ -81,6 +85,7 @@ jobs:
         run: |
           if [ -d "./github-workflows" ]; then
             cd ./github-workflows
+            pwd
             git pull
           else
             git clone https://github.com/sriharsha219/github-workflows
@@ -88,4 +93,5 @@ jobs:
       - name: Run reduction_module_3.py script in AWS EC2
         run: |
           cd ./github-workflows/reduction
+          pwd
           python3 reduction_module_3.py
